@@ -46,5 +46,10 @@ for (let i = 9; i < 19; i++) {
   else if (i < currTime) {
     parentID.children[1].classList.add("past")
   };
-
+  parentID.children[1].value = localStorage.getItem("hour-"+i);
+  parentID.children[2].addEventListener("click", function(){
+    var text = this.previousElementSibling.value
+    alert(text)
+    localStorage.setItem("hour-"+i,text)
+})
 }
